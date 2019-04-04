@@ -29,11 +29,13 @@ router.post('/', async (req, res) => {
       errors
     });
   } else {
-    console.log(data);
+    const weather = data.weather[0].main;
+    console.log(data.weather[0].main);
     res.render('mainpage', {
       name,
       country: data.sys.country,
-      temp: data.main.temp
+      temp: data.main.temp,
+      weather
     });
   };
 });

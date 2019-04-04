@@ -10,12 +10,58 @@
           <input type="name" id="name" name="name" class="form-control" placeholder="Enter city name"
             value="<%= typeof name != 'undefined' ? name : '' %>" />
         </div>
-        <% include ./partials/messages %>
-        <button type="submit" class="btn btn-primary btn-block">
+        <button type="submit" class="btn btn-primary btn-block mb-3">
           SUBMIT
         </button>
+        <% include ./partials/messages %>
         <%= typeof temp != 'undefined' ? temp + '°C' : '' %> <br>
-        <%= typeof country != 'undefined' ? 'Country: ' + country : '' %>
+        <%= typeof country != 'undefined' ? 'Country: ' + country : '' %> <br>
+        <%= typeof weather != 'undefined' ? 'Weather: ' + weather : '' %>
+        <% if(typeof weather != 'undefined' && weather == 'Rain') {%>
+        <div class=wrapper>
+          <div class=cloudy>
+            <div class=cloudy_left></div>
+            <div class=cloudy_right></div>
+          </div>
+          <div class=rain>
+            <div class=drop></div>
+            <div class=drop></div>
+            <div class=drop></div>
+            <div class=drop></div>
+            <div class=drop></div>
+          </div>
+          <div class=surface>
+            <div class=hit></div>
+            <div class=hit></div>
+            <div class=hit></div>
+            <div class=hit></div>
+            <div class=hit></div>
+          </div>
+        </div>
+        <% } %>
+        <% if(typeof weather != 'undefined' && weather == 'Clouds') {%>
+        <div id="clouds-wrap">
+          <div class="x1">
+            <div class="cloud"></div>
+          </div>
+
+          <div class="x2">
+            <div class="cloud"></div>
+          </div>
+
+          <div class="x3">
+            <div class="cloud"></div>
+          </div>
+
+          <div class="x4">
+            <div class="cloud"></div>
+          </div>
+
+          <div class="x5">
+            <div class="cloud"></div>
+          </div>
+        </div>
+        <% } %>
       </form>
     </div>
   </div>

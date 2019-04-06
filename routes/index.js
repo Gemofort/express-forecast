@@ -30,7 +30,8 @@ router.post('/', async (req, res) => {
     });
   } else {
     const weather = data.weather[0].main;
-    console.log(data.weather[0].main);
+    const dateNow = new Date(Date.now());
+    //console.log(data);
     res.render('mainpage', {
       name,
       country: data.sys.country,

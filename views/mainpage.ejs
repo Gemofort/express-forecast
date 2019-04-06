@@ -16,10 +16,10 @@
           SUBMIT
         </button>
         <% include ./partials/messages %>
-        <%= typeof temp != 'undefined' ? temp + '°C' : '' %> <br>
+        <%= typeof temp != 'undefined' ? 'Temperature: ' + temp + '°C' : '' %> <br>
         <%= typeof country != 'undefined' ? 'Country: ' + country : '' %> <br>
         <%= typeof weather != 'undefined' ? 'Weather: ' + weather : '' %>
-        <% if(typeof weather != 'undefined' && weather == 'Rain') {%>
+        <% if(typeof weather != 'undefined' && (weather == 'Rain' || weather == 'Drizzle')) {%>
         <div class=wrapper>
           <div class=cloudy>
             <div class=cloudy_left></div>
@@ -61,6 +61,16 @@
 
           <div class="x5">
             <div class="cloud"></div>
+          </div>
+        </div>
+        <% } %>
+        <% if(typeof weather != 'undefined' && weather == 'Clear') {%>
+        <div id="sun">
+          <div id="rings">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </div>
         <% } %>
